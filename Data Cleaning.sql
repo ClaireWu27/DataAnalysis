@@ -10,7 +10,7 @@ from NashvilleHousing nh;
 update NashvilleHousing 
 set SaleDate=str_to_date(SaleDate,"%M %e,%Y");
 
--- populate property address data
+-- populating property address data
 select  a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, ifnull(a.PropertyAddress, b.PropertyAddress) 
 from NashvilleHousing a join NashvilleHousing b
 on a.ParcelID =b.ParcelID and a.UniqueID !=b.UniqueID
